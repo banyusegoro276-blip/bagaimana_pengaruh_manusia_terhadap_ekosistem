@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul Ajar IPA Kelas 7: Pengaruh Manusia terhadap Ekosistem | MGMP IPA MTs Kota Malang</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js for Simulation Analytics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        .gradient-header { background: linear-gradient(135deg, #064e3b 0%, #047857 50%, #0d9488 100%); }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f5f9; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #10b981; border-radius: 9999px; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col selection:bg-emerald-200 selection:text-emerald-900">
+
+    <!-- Header Utama MGMP IPA MTs Kota Malang -->
+    <header class="gradient-header text-white shadow-xl sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3.5 flex flex-col lg:flex-row justify-between items-center gap-3">
+            <div class="flex items-center space-x-3 w-full lg:w-auto justify-between lg:justify-start">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-white/10 p-2.5 rounded-2xl border border-white/20 shadow-inner">
+                        <i class="fa-solid fa-industry text-emerald-300 text-2xl"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-[10px] sm:text-xs uppercase tracking-wider text-emerald-200 font-bold">MGMP IPA MTs Kota Malang</span>
+                            <span class="text-[10px] bg-emerald-700/80 border border-emerald-500/30 text-emerald-100 px-2 py-0.5 rounded-full font-semibold">Kurikulum Merdeka</span>
+                        </div>
+                        <h1 class="text-base sm:text-lg md:text-xl font-extrabold tracking-tight">Pengaruh Manusia terhadap Ekosistem <span class="text-xs font-normal text-emerald-200">(Fase D • Kelas VII)</span></h1>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Menu Navigasi -->
+            <nav class="flex flex-wrap gap-1.5 sm:gap-2 justify-center w-full lg:w-auto">
+                <button onclick="switchTab('beranda')" id="btn-beranda" class="nav-btn px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-emerald-900 shadow transition flex items-center space-x-1.5">
+                    <i class="fa-solid fa-house"></i><span>Beranda</span>
+                </button>
+                <button onclick="switchTab('materi')" id="btn-materi" class="nav-btn px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs sm:text-sm font-semibold text-emerald-100 hover:bg-white/10 transition flex items-center space-x-1.5">
+                    <i class="fa-solid fa-book-open"></i><span>Materi</span>
+                </button>
+                <button onclick="switchTab('simulasi')" id="btn-simulasi" class="nav-btn px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs sm:text-sm font-semibold text-emerald-100 hover:bg-white/10 transition flex items-center space-x-1.5">
+                    <i class="fa-solid fa-sliders"></i><span>Simulator</span>
+                </button>
+                <button onclick="switchTab('lkpd')" id="btn-lkpd" class="nav-btn px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs sm:text-sm font-semibold text-emerald-100 hover:bg-white/10 transition flex items-center space-x-1.5">
+                    <i class="fa-solid fa-file-signature"></i><span>LKPD Digital</span>
+                </button>
+                <button onclick="switchTab('evaluasi')" id="btn-evaluasi" class="nav-btn px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs sm:text-sm font-semibold text-emerald-100 hover:bg-white/10 transition flex items-center space-x-1.5">
+                    <i class="fa-solid fa-award"></i><span>20 Soal HOTS</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Content Body -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 py-6 md:py-8">
+
+        <!-- TAB 1: BERANDA & CAPAIAN PEMBELAJARAN -->
+        <section id="tab-beranda" class="tab-content space-y-6 md:space-y-8">
+            <div class="bg-gradient-to-r from-emerald-900 via-teal-800 to-emerald-800 rounded-3xl text-white p-6 md:p-12 shadow-2xl relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 opacity-10 pointer-events-none">
+                    <i class="fa-solid fa-earth-americas text-[260px]"></i>
+                </div>
+                <div class="max-w-3xl relative z-10 space-y-4">
+                    <div class="inline-flex items-center space-x-2 bg-emerald-700/60 border border-emerald-400/30 text-emerald-100 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                        <i class="fa-solid fa-seedling text-emerald-300"></i>
+                        <span>Modul Pembelajaran IPA Interaktif</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-4xl md:text-5xl font-black leading-tight tracking-tight">Bagaimanakah Pengaruh Manusia terhadap Ekosistem?</h2>
+                    <p class="text-emerald-100 text-xs sm:text-base leading-relaxed">
+                        Aplikasi modul pembelajaran digital interaktif yang dirancang khusus oleh <strong>MGMP IPA MTs Kota Malang</strong> untuk memfasilitasi eksplorasi siswa kelas VII mengenai alih fungsi lahan, pencemaran lingkungan, penurunan keanekaragaman hayati, serta solusi konservasi berkelanjutan.
+                    </p>
+                    <div class="flex flex-wrap gap-3 pt-2">
+                        <button onclick="switchTab('materi')" class="bg-white text-emerald-950 font-bold px-5 py-3 rounded-2xl shadow-lg hover:bg-emerald-50 transition flex items-center space-x-2 text-xs sm:text-sm">
+                            <span>Pelajari Materi Eksklusif</span><i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <button onclick="switchTab('simulasi')" class="bg-emerald-600/80 hover:bg-emerald-600 text-white font-bold px-5 py-3 rounded-2xl border border-emerald-400/40 shadow-lg transition flex items-center space-x-2 text-xs sm:text-sm">
+                            <i class="fa-solid fa-gamepad"></i><span>Jalankan Simulator Ekosistem</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kartu Capaian & Tujuan -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 hover:shadow-md transition flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center font-bold text-xl">
+                            <i class="fa-solid fa-users-gear"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">MGMP IPA MTs Kota Malang</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Wadah pengembangan profesionalisme guru IPA MTs Se-Kota Malang yang mengutamakan pembelajaran IPA berbasis literasi sains, HOTS, dan teknologi digital.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 text-[11px] text-emerald-700 font-bold flex items-center space-x-1">
+                        <i class="fa-solid fa-circle-check"></i><span>Perangkat Resmi MGMP IPA</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 hover:shadow-md transition flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="w-12 h-12 bg-teal-100 text-teal-700 rounded-2xl flex items-center justify-center font-bold text-xl">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">Tujuan Pembelajaran (TP)</h3>
+                        <ul class="text-slate-600 text-xs sm:text-sm space-y-1.5 list-disc list-inside">
+                            <li>Menganalisis dampak deforestasi & alih fungsi lahan.</li>
+                            <li>Mengidentifikasi sumber & dampak polusi air/udara/tanah.</li>
+                            <li>Menjelaskan bioakumulasi & eutrofikasi.</li>
+                            <li>Merumuskan gagasan konservasi & remediasi.</li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 text-[11px] text-teal-700 font-bold flex items-center space-x-1">
+                        <i class="fa-solid fa-graduation-cap"></i><span>Capaian Elemen Pemahaman IPA</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 hover:shadow-md transition flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="w-12 h-12 bg-amber-100 text-amber-700 rounded-2xl flex items-center justify-center font-bold text-xl">
+                            <i class="fa-solid fa-hand-holding-heart"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">Profil Pelajar Pancasila</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Menumbuhkan sikap <strong>Bernalar Kritis</strong> dalam menganalisis masalah lingkungan, <strong>Kreatif</strong> merancang solusi remediasi, serta berakhlak terhadap alam ciptaan Tuhan.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 text-[11px] text-amber-700 font-bold flex items-center space-x-1">
+                        <i class="fa-solid fa-leaf"></i><span>Peduli Kelestarian Lingkungan</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: MATERI PEMBELAJARAN INTERAKTIF -->
+        <section id="tab-materi" class="tab-content hidden space-y-6 md:space-y-8">
+            <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-200/80 space-y-8">
+                <div class="flex items-center space-x-3 pb-4 border-b border-slate-100">
+                    <div class="p-3 bg-emerald-100 text-emerald-800 rounded-2xl"><i class="fa-solid fa-book-bookmark text-2xl"></i></div>
+                    <div>
+                        <h2 class="text-2xl font-extrabold text-slate-900">Materi Pembelajaran: Dampak Aktivitas Manusia terhadap Ekosistem</h2>
+                        <p class="text-slate-500 text-xs sm:text-sm">Modul Referensi Resmi • MGMP IPA MTs Kota Malang</p>
+                    </div>
+                </div>
+
+                <!-- Modul 1 & 2 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-emerald-50/70 p-6 rounded-3xl border border-emerald-100 space-y-3 hover:shadow-md transition">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-extrabold bg-emerald-200 text-emerald-900 px-3 py-1 rounded-full uppercase">Bagian 1</span>
+                            <i class="fa-solid fa-tree-city text-emerald-700 text-xl"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-emerald-950">1. Alih Fungsi Lahan & Deforestasi</h3>
+                        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                            <strong>Deforestasi</strong> adalah penggundulan hutan secara masif untuk pertanian monokultur, pemukiman, atau industri. Dampaknya mencakup:<br>
+                            • <em>Fragmentasi Habitat:</em> Menyempitnya ruang gerak satwa yang memicu konflik manusia vs satwa liar.<br>
+                            • <em>Hilangnya Resapan Air:</em> Memicu erosi tanah, banjir bandang, serta penurunan drastis kualitas air tanah.<br>
+                            • <em>Pelepasan Karbon:</em> Hutan sebagai penyimpan karbon berubah menjadi sumber emisi karbon saat dibakar.
+                        </p>
+                    </div>
+
+                    <div class="bg-teal-50/70 p-6 rounded-3xl border border-teal-100 space-y-3 hover:shadow-md transition">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-extrabold bg-teal-200 text-teal-900 px-3 py-1 rounded-full uppercase">Bagian 2</span>
+                            <i class="fa-solid fa-smog text-teal-700 text-xl"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-teal-950">2. Pencemaran Lingkungan (Polusi)</h3>
+                        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                            <strong>Pencemaran Air:</strong> Masuknya limbah domestik & industri, deterjen, serta logam berat (Mercury, Timbal) merusak biota perairan.<br>
+                            <strong>Pencemaran Udara:</strong> Gas buang kendaraan dan pabrik (CO₂, SO₂, NOₓ) memicu pemanasan global dan hujan asam.<br>
+                            <strong>Pencemaran Tanah:</strong> Plastik sekali pakai dan limbah bahan berbahaya merusak mikroorganisme pengurai hara tanah.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Modul 3 & 4 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-amber-50/70 p-6 rounded-3xl border border-amber-100 space-y-3 hover:shadow-md transition">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-extrabold bg-amber-200 text-amber-900 px-3 py-1 rounded-full uppercase">Bagian 3</span>
+                            <i class="fa-solid fa-skull-crossbones text-amber-700 text-xl"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-amber-950">3. Bioakumulasi & Eutrofikasi</h3>
+                        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                            <strong>Bioakumulasi & Biomagnifikasi:</strong> Penumpukan zat racun (seperti pestisida DDT atau mikroplastik) yang semakin terkonsentrasi pada konsumen puncak rantai makanan.<br>
+                            <strong>Eutrofikasi:</strong> Peledakan pertumbuhan alga (<em>blooming algae</em>) akibat akumulasi pupuk fosfat/nitrat di danau yang menutup permukaan air dan menghabiskan oksigen terlarut (DO).
+                        </p>
+                    </div>
+
+                    <div class="bg-blue-50/70 p-6 rounded-3xl border border-blue-100 space-y-3 hover:shadow-md transition">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-extrabold bg-blue-200 text-blue-900 px-3 py-1 rounded-full uppercase">Bagian 4</span>
+                            <i class="fa-solid fa-hand-holding-droplet text-blue-700 text-xl"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-blue-950">4. Spesi Invasif & Konservasi Solutif</h3>
+                        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                            <strong>Spesies Invasif:</strong> Introduksi spesies asing (misal: eceng gondok atau ikan predator asing) memutus rantai makanan asli.<br>
+                            <strong>Konservasi & Remediasi:</strong> Langkah pemulihan melalui <em>Reboisasi</em> (penanaman kembali), <em>Fitoremediasi</em> (pembersihan polutan menggunakan tumbuhan), serta penetapan kawasan Suaka Margasatwa & Taman Nasional.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Infografis Konsep Interaktif -->
+                <div class="bg-slate-900 text-white p-6 rounded-3xl space-y-4 shadow-xl">
+                    <h3 class="text-base font-bold text-emerald-400 flex items-center space-x-2">
+                        <i class="fa-solid fa-diagram-project"></i><span>Skema Dampak Domino Aktivitas Manusia</span>
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 text-center text-xs">
+                        <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700">
+                            <div class="text-xl mb-1">🏭</div>
+                            <div class="font-bold text-amber-300">Aktivitas Manusia</div>
+                            <div class="text-[11px] text-slate-400 mt-1">Industrialisasi & Alih Fungsi Lahan</div>
+                        </div>
+                        <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700">
+                            <div class="text-xl mb-1">📉</div>
+                            <div class="font-bold text-rose-300">Perubahan Abiotik</div>
+                            <div class="text-[11px] text-slate-400 mt-1">Suhu naik, Oksigen turun, pH berubah</div>
+                        </div>
+                        <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700">
+                            <div class="text-xl mb-1">🐾</div>
+                            <div class="font-bold text-teal-300">Kerusakan Biotik</div>
+                            <div class="text-[11px] text-slate-400 mt-1">Kepunahan spesies & kepunahan lokal</div>
+                        </div>
+                        <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700">
+                            <div class="text-xl mb-1">🌱</div>
+                            <div class="font-bold text-emerald-300">Solusi Berkelanjutan</div>
+                            <div class="text-[11px] text-slate-400 mt-1">Konservasi & Fitoremediasi</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: SIMULATOR DYNAMIC MAN-MADE IMPACT -->
+        <section id="tab-simulasi" class="tab-content hidden space-y-6 md:space-y-8">
+            <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-200/80 space-y-6">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center pb-4 border-b border-slate-100 gap-4">
+                    <div>
+                        <h2 class="text-2xl font-extrabold text-slate-900">Simulator Dampak Aktivitas Manusia terhadap Ekosistem</h2>
+                        <p class="text-slate-500 text-xs sm:text-sm">Ubah variabel di bawah untuk mengamati perubahan tutupan hutan, indeks polusi, dan keanekaragaman hayati.</p>
+                    </div>
+                    <button onclick="resetSimulasiManusia()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-4 py-2.5 rounded-2xl transition flex items-center space-x-1.5 border border-slate-300">
+                        <i class="fa-solid fa-rotate-right"></i><span>Reset Parameter</span>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Panel Parameter Kontrol -->
+                    <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200 space-y-5">
+                        <h3 class="font-bold text-slate-900 text-xs uppercase tracking-wider flex items-center space-x-2">
+                            <i class="fa-solid fa-sliders text-emerald-600"></i><span>Variabel Aktivitas Manusia</span>
+                        </h3>
+
+                        <!-- 1. Deforestasi -->
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between text-xs font-semibold">
+                                <span class="text-slate-700">Tingkat Penebangan Hutan</span>
+                                <span id="val-deforestasi" class="text-rose-700 font-bold">30%</span>
+                            </div>
+                            <input type="range" id="slider-deforestasi" min="0" max="100" value="30" oninput="updateSimulasiManusia()" class="w-full accent-rose-600 cursor-pointer">
+                        </div>
+
+                        <!-- 2. Industri & Polusi -->
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between text-xs font-semibold">
+                                <span class="text-slate-700">Emisi Limbah & Polusi Industri</span>
+                                <span id="val-industri" class="text-amber-700 font-bold">25%</span>
+                            </div>
+                            <input type="range" id="slider-industri" min="0" max="100" value="25" oninput="updateSimulasiManusia()" class="w-full accent-amber-600 cursor-pointer">
+                        </div>
+
+                        <!-- 3. Alih Fungsi Pemukiman -->
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between text-xs font-semibold">
+                                <span class="text-slate-700">Alih Fungsi Lahan (Pemukiman)</span>
+                                <span id="val-pemukiman" class="text-teal-700 font-bold">20%</span>
+                            </div>
+                            <input type="range" id="slider-pemukiman" min="0" max="100" value="20" oninput="updateSimulasiManusia()" class="w-full accent-teal-600 cursor-pointer">
+                        </div>
+
+                        <!-- 4. Program Reboisasi -->
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between text-xs font-semibold">
+                                <span class="text-slate-700">Upaya Konservasi & Reboisasi</span>
+                                <span id="val-reboisasi" class="text-emerald-700 font-bold">40%</span>
+                            </div>
+                            <input type="range" id="slider-reboisasi" min="0" max="100" value="40" oninput="updateSimulasiManusia()" class="w-full accent-emerald-600 cursor-pointer">
+                        </div>
+
+                        <button onclick="simulasikanLangkah()" class="w-full bg-emerald-800 hover:bg-emerald-900 text-white font-bold py-3 rounded-2xl text-xs shadow-md transition flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-play"></i><span>Jalankan Simulasi Siklus</span>
+                        </button>
+
+                        <div id="box-status-ekosistem" class="bg-emerald-100/70 p-4 rounded-2xl border border-emerald-200 text-xs text-emerald-950 font-medium">
+                            <i class="fa-solid fa-circle-check text-emerald-700 mr-1"></i> Ekosistem seimbang. Reboisasi mampu mengimbangi tingkat konsumsi lahan.
+                        </div>
+                    </div>
+
+                    <!-- Panel Output Visual Canvas & Grafik -->
+                    <div class="lg:col-span-2 space-y-6">
+                        <!-- Canvas Visualisasi Habitat -->
+                        <div class="bg-slate-900 rounded-3xl p-4 border border-slate-800 shadow-inner relative overflow-hidden">
+                            <div class="flex justify-between items-center mb-2 px-2 text-xs text-slate-300">
+                                <span class="font-bold flex items-center space-x-1.5">
+                                    <i class="fa-solid fa-eye text-emerald-400"></i><span>Visual Tampilan Landscape Habitat</span>
+                                </span>
+                                <span id="label-kesehatan" class="bg-emerald-900 text-emerald-300 px-2.5 py-0.5 rounded-full text-[10px] font-bold">Kondisi Baik</span>
+                            </div>
+                            <canvas id="canvasHabitat" class="w-full h-48 sm:h-56 rounded-2xl border border-slate-700/60 bg-emerald-950"></canvas>
+                        </div>
+
+                        <!-- Kartu Indikator Nilai -->
+                        <div class="grid grid-cols-3 gap-3">
+                            <div class="bg-emerald-50 border border-emerald-200 p-3.5 rounded-2xl text-center">
+                                <div class="text-xs font-bold text-emerald-900 mb-1">Tutupan Hutan</div>
+                                <span id="num-hutan" class="text-lg sm:text-2xl font-black text-emerald-700">75%</span>
+                            </div>
+                            <div class="bg-rose-50 border border-rose-200 p-3.5 rounded-2xl text-center">
+                                <div class="text-xs font-bold text-rose-900 mb-1">Indeks Polusi</div>
+                                <span id="num-polusi" class="text-lg sm:text-2xl font-black text-rose-700">20%</span>
+                            </div>
+                            <div class="bg-teal-50 border border-teal-200 p-3.5 rounded-2xl text-center">
+                                <div class="text-xs font-bold text-teal-900 mb-1">Populasi Satwa</div>
+                                <span id="num-satwa" class="text-lg sm:text-2xl font-black text-teal-700">85</span>
+                            </div>
+                        </div>
+
+                        <!-- Chart.js Graph -->
+                        <div class="bg-slate-50 p-4 rounded-3xl border border-slate-200">
+                            <h4 class="text-xs font-bold text-slate-700 mb-3 uppercase tracking-wider">Grafik Prediksi Tren Ekosistem (Time-Series)</h4>
+                            <div class="h-56 relative">
+                                <canvas id="chartImpact"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 4: LKPD DIGITAL -->
+        <section id="tab-lkpd" class="tab-content hidden space-y-6 md:space-y-8">
+            <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-200/80 space-y-6">
+                <div class="flex items-center space-x-3 pb-4 border-b border-slate-100">
+                    <div class="p-3 bg-teal-100 text-teal-800 rounded-2xl"><i class="fa-solid fa-file-pen text-2xl"></i></div>
+                    <div>
+                        <h2 class="text-2xl font-extrabold text-slate-900">Lembar Kerja Peserta Didik (LKPD) Digital</h2>
+                        <p class="text-slate-500 text-xs sm:text-sm">Lembar Penugasan Siswa • MGMP IPA MTs Kota Malang</p>
+                    </div>
+                </div>
+
+                <div class="space-y-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Nama Lengkap Peserta Didik</label>
+                            <input type="text" id="lkpd-nama-input" placeholder="Ketik nama Anda di sini..." class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-xs sm:text-sm focus:outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Kelas / No. Absen</label>
+                            <input type="text" id="lkpd-kelas-input" placeholder="Contoh: Kelas 7-A / 08" class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-xs sm:text-sm focus:outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100">
+                        </div>
+                    </div>
+
+                    <!-- Pertanyaan Analisis Kasus LKPD -->
+                    <div class="space-y-4 pt-2">
+                        <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-2">
+                            <label class="block text-xs sm:text-sm font-bold text-slate-900">
+                                1. Analisis Kasus Eutrofikasi: Mengapa penggunaan pupuk kimia berlebihan di pertanian dekat danau dapat menyebabkan kematian massal ikan secara mendadak? Jelaskan mekanismenya!
+                            </label>
+                            <textarea id="lkpd-ans-1" rows="3" placeholder="Tuliskan jawaban ilmiah Anda..." class="w-full p-3.5 rounded-xl border border-slate-200 text-xs sm:text-sm focus:outline-none focus:border-emerald-600"></textarea>
+                        </div>
+
+                        <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-2">
+                            <label class="block text-xs sm:text-sm font-bold text-slate-900">
+                                2. Analisis Simulator: Berdasarkan uji coba simulator, strategi apakah yang paling efektif untuk memulihkan keanekaragaman hayati jika populasi industri sudah terlanjur tinggi?
+                            </label>
+                            <textarea id="lkpd-ans-2" rows="3" placeholder="Tuliskan rekomendasi solusi Anda..." class="w-full p-3.5 rounded-xl border border-slate-200 text-xs sm:text-sm focus:outline-none focus:border-emerald-600"></textarea>
+                        </div>
+
+                        <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-2">
+                            <label class="block text-xs sm:text-sm font-bold text-slate-900">
+                                3. Gagasan Inovasi Konservasi: Rancanglah satu langkah konkrit yang dapat dilakukan di lingkungan madrasah/rumah untuk mengurangi pencemaran mikroplastik di perairan!
+                            </label>
+                            <textarea id="lkpd-ans-3" rows="3" placeholder="Tuliskan gagasan inovasi Anda..." class="w-full p-3.5 rounded-xl border border-slate-200 text-xs sm:text-sm focus:outline-none focus:border-emerald-600"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end pt-3">
+                        <button onclick="salinJawabanLKPD()" class="bg-emerald-800 hover:bg-emerald-900 text-white font-bold px-6 py-3.5 rounded-2xl text-xs sm:text-sm shadow-lg transition flex items-center space-x-2">
+                            <i class="fa-solid fa-copy"></i><span>Salin / Simpan Hasil Jawaban LKPD</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 5: 20 SOAL PILIHAN GANDA HOTS -->
+        <section id="tab-evaluasi" class="tab-content hidden space-y-6 md:space-y-8">
+            <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-200/80 space-y-6">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center pb-4 border-b border-slate-100 gap-4">
+                    <div>
+                        <h2 class="text-2xl font-extrabold text-slate-900">Evaluasi Pemahaman HOTS (20 Soal Pilihan Ganda)</h2>
+                        <p class="text-slate-500 text-xs sm:text-sm">Uji Penalaran Kritis & Literasi Sains • MGMP IPA MTs Kota Malang</p>
+                    </div>
+                    <div id="badge-skor-hots" class="hidden bg-emerald-100 text-emerald-900 border border-emerald-300 px-5 py-2.5 rounded-2xl font-black text-sm sm:text-base">
+                        Skor Akhir: <span id="nilai-skor-hots" class="text-emerald-700">0</span> / 100
+                    </div>
+                </div>
+
+                <!-- Container 20 Soal HOTS -->
+                <div id="container-soal-hots" class="space-y-6"></div>
+
+                <!-- Tombol Aksi Ujian -->
+                <div class="pt-6 border-t border-slate-100 flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <button onclick="evaluasiQuizHOTS()" class="w-full sm:w-auto bg-emerald-800 hover:bg-emerald-900 text-white font-bold px-8 py-4 rounded-2xl shadow-xl transition flex items-center justify-center space-x-2 text-sm">
+                        <i class="fa-solid fa-square-check text-lg"></i><span>Kirim & Periksa Jawaban HOTS</span>
+                    </button>
+                    <button id="btn-cetak-sertifikat" onclick="tampilkanSertifikat()" class="hidden w-full sm:w-auto bg-teal-700 hover:bg-teal-800 text-white font-bold px-8 py-4 rounded-2xl shadow-xl transition flex items-center justify-center space-x-2 text-sm">
+                        <i class="fa-solid fa-certificate text-lg"></i><span>Buka Sertifikat Kelulusan</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal Sertifikat Resmi MGMP IPA -->
+    <div id="modal-sertifikat" class="fixed inset-0 bg-slate-900/70 backdrop-blur-md hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-10 shadow-2xl border-8 border-emerald-800 text-center space-y-5 relative">
+            <button onclick="tutupSertifikat()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-2xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="space-y-1">
+                <div class="text-xs uppercase font-extrabold tracking-widest text-emerald-700">MGMP IPA MTs KOTA MALANG</div>
+                <h3 class="text-2xl sm:text-3xl font-black text-slate-900">SERTIFIKAT KELULUSAN MODUL</h3>
+                <p class="text-xs text-slate-500">Nomor Dokumen: MGMP-IPA/MODUL-07/2026</p>
+            </div>
+            <div class="py-5 border-y-2 border-slate-100 space-y-2">
+                <p class="text-xs text-slate-500">Sertifikat Penghargaan Ini Diberikan Kepada:</p>
+                <h4 id="nama-sertifikat-display" class="text-xl sm:text-2xl font-bold text-emerald-900 italic underline decoration-amber-500 underline-offset-8">Nama Peserta Didik</h4>
+                <p class="text-xs sm:text-sm text-slate-600 pt-2">
+                    Telah menyelesaikan seluruh rangkaian kegiatan belajar dan berhasil menuntaskan Evaluasi HOTS Modul Ajar <strong>"Pengaruh Manusia terhadap Ekosistem"</strong> dengan nilai:
+                </p>
+                <div class="text-3xl font-black text-emerald-700" id="skor-sertifikat-display">100</div>
+            </div>
+            <div class="flex justify-between items-center text-xs text-slate-500 pt-2 px-2">
+                <div class="text-left">
+                    <p class="font-bold text-slate-800">Tim Pengembang Modul</p>
+                    <p>MGMP IPA MTs Kota Malang</p>
+                </div>
+                <div class="text-right">
+                    <p class="font-bold text-slate-800">Kota Malang</p>
+                    <p>Tahun Ajaran 2025/2026</p>
+                </div>
+            </div>
+            <div class="pt-2">
+                <button onclick="window.print()" class="w-full bg-emerald-800 hover:bg-emerald-900 text-white font-bold py-3 rounded-2xl shadow transition text-xs">
+                    <i class="fa-solid fa-print mr-1.5"></i> Cetak / Simpan Sertifikat (PDF)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Modal Toast -->
+    <div id="modal-toast" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl text-center space-y-4">
+            <div id="toast-icon" class="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center mx-auto text-2xl">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 id="toast-title" class="text-lg font-bold text-slate-900">Pemberitahuan</h3>
+            <p id="toast-desc" class="text-xs sm:text-sm text-slate-600">Pesan sistem.</p>
+            <button onclick="tutupToast()" class="w-full bg-emerald-800 text-white font-bold py-2.5 rounded-xl text-xs transition">Tutup</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-8 mt-12 text-center text-xs space-y-2 border-t border-slate-800">
+        <p class="font-bold text-emerald-400">MGMP IPA MTs KOTA MALANG • Perangkat Ajar Kurikulum Merdeka</p>
+        <p class="text-slate-400">&copy; 2026 MGMP IPA MTs Kota Malang. Seluruh hak cipta dilindungi undang-undang.</p>
+    </footer>
+
+    <!-- JavaScript Logika Aplikasi lengkap tanpa placeholder -->
+    <script>
+        // Switch Tab Navigation
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('bg-white', 'text-emerald-900', 'shadow');
+                btn.classList.add('text-emerald-100', 'hover:bg-white/10');
+            });
+
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.classList.remove('text-emerald-100', 'hover:bg-white/10');
+            activeBtn.classList.add('bg-white', 'text-emerald-900', 'shadow');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            if(tabId === 'simulasi') {
+                renderHabitatCanvas();
+            }
+        }
+
+        // Custom Toast Notification
+        function showToast(title, desc, isSuccess = true) {
+            document.getElementById('toast-title').innerText = title;
+            document.getElementById('toast-desc').innerText = desc;
+            const iconDiv = document.getElementById('toast-icon');
+            if(isSuccess) {
+                iconDiv.className = "w-14 h-14 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center mx-auto text-2xl";
+                iconDiv.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+            } else {
+                iconDiv.className = "w-14 h-14 bg-rose-100 text-rose-700 rounded-2xl flex items-center justify-center mx-auto text-2xl";
+                iconDiv.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i>';
+            }
+            document.getElementById('modal-toast').classList.remove('hidden');
+        }
+
+        function tutupToast() {
+            document.getElementById('modal-toast').classList.add('hidden');
+        }
+
+        // --- LOGIKA SIMULATOR DINAMIS MANUSIA ---
+        let chartImpactInstance;
+        let vHutan = 75, vPolusi = 20, vSatwa = 85;
+
+        function initSimulasiManusia() {
+            const ctx = document.getElementById('chartImpact').getContext('2d');
+            chartImpactInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['T0', 'T1', 'T2', 'T3', 'T4', 'T5'],
+                    datasets: [
+                        { label: 'Tutupan Hutan (%)', data: [80, 78, 75, 76, 75, 75], borderColor: '#10b981', backgroundColor: '#10b981', tension: 0.3 },
+                        { label: 'Indeks Polusi (%)', data: [15, 18, 20, 19, 20, 20], borderColor: '#f43f5e', backgroundColor: '#f43f5e', tension: 0.3 },
+                        { label: 'Populasi Satwa (Indeks)', data: [90, 88, 85, 86, 85, 85], borderColor: '#14b8a6', backgroundColor: '#14b8a6', tension: 0.3 }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: { y: { beginAtZero: true, max: 100 } }
+                }
+            });
+            updateSimulasiManusia();
+        }
+
+        function updateSimulasiManusia() {
+            const deforestasi = parseInt(document.getElementById('slider-deforestasi').value);
+            const industri = parseInt(document.getElementById('slider-industri').value);
+            const pemukiman = parseInt(document.getElementById('slider-pemukiman').value);
+            const reboisasi = parseInt(document.getElementById('slider-reboisasi').value);
+
+            document.getElementById('val-deforestasi').innerText = deforestasi + '%';
+            document.getElementById('val-industri').innerText = industri + '%';
+            document.getElementById('val-pemukiman').innerText = pemukiman + '%';
+            document.getElementById('val-reboisasi').innerText = reboisasi + '%';
+
+            // Rumus Dinamika Lingkungan
+            vHutan = Math.max(5, Math.min(100, Math.round(100 - (deforestasi * 0.6) - (pemukiman * 0.3) + (reboisasi * 0.4))));
+            vPolusi = Math.max(5, Math.min(100, Math.round((industri * 0.7) + (pemukiman * 0.3) - (reboisasi * 0.2))));
+            vSatwa = Math.max(0, Math.min(100, Math.round((vHutan * 0.7) - (vPolusi * 0.4))));
+
+            document.getElementById('num-hutan').innerText = vHutan + '%';
+            document.getElementById('num-polusi').innerText = vPolusi + '%';
+            document.getElementById('num-satwa').innerText = vSatwa;
+
+            const boxStatus = document.getElementById('box-status-ekosistem');
+            const lblKesehatan = document.getElementById('label-kesehatan');
+
+            if(vPolusi > 60 || vHutan < 30) {
+                boxStatus.className = "bg-rose-100/80 p-4 rounded-2xl border border-rose-300 text-xs text-rose-950 font-medium";
+                boxStatus.innerHTML = '<i class="fa-solid fa-triangle-exclamation text-rose-700 mr-1"></i> <strong>KRITIS:</strong> Ekosistem mengalami degredasi parah! Kepunahan satwa dan banjir rawan terjadi.';
+                lblKesehatan.className = "bg-rose-900 text-rose-200 px-2.5 py-0.5 rounded-full text-[10px] font-bold";
+                lblKesehatan.innerText = "Kondisi Kritis";
+            } else if(vHutan < 55 || vPolusi > 35) {
+                boxStatus.className = "bg-amber-100/80 p-4 rounded-2xl border border-amber-300 text-xs text-amber-950 font-medium";
+                boxStatus.innerHTML = '<i class="fa-solid fa-circle-exclamation text-amber-700 mr-1"></i> <strong>WASPADA:</strong> Tekanan lingkungan tinggi. Perlu peningkatan reboisasi.';
+                lblKesehatan.className = "bg-amber-900 text-amber-200 px-2.5 py-0.5 rounded-full text-[10px] font-bold";
+                lblKesehatan.innerText = "Kondisi Tertekan";
+            } else {
+                boxStatus.className = "bg-emerald-100/80 p-4 rounded-2xl border border-emerald-300 text-xs text-emerald-950 font-medium";
+                boxStatus.innerHTML = '<i class="fa-solid fa-circle-check text-emerald-700 mr-1"></i> Ekosistem seimbang. Reboisasi mampu mengimbangi tingkat konsumsi lahan.';
+                lblKesehatan.className = "bg-emerald-900 text-emerald-200 px-2.5 py-0.5 rounded-full text-[10px] font-bold";
+                lblKesehatan.innerText = "Kondisi Baik";
+            }
+
+            renderHabitatCanvas();
+        }
+
+        function renderHabitatCanvas() {
+            const canvas = document.getElementById('canvasHabitat');
+            if(!canvas) return;
+            const ctx = canvas.getContext('2d');
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // 1. Gambar Langit
+            const skyGradient = ctx.createLinearGradient(0, 0, 0, canvas.height * 0.6);
+            if(vPolusi > 50) {
+                skyGradient.addColorStop(0, '#475569');
+                skyGradient.addColorStop(1, '#94a3b8');
+            } else {
+                skyGradient.addColorStop(0, '#0284c7');
+                skyGradient.addColorStop(1, '#bae6fd');
+            }
+            ctx.fillStyle = skyGradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height * 0.6);
+
+            // 2. Gambar Tanah / Hutan
+            const greenRatio = vHutan / 100;
+            ctx.fillStyle = greenRatio > 0.5 ? '#15803d' : (greenRatio > 0.3 ? '#854d0e' : '#7f1d1d');
+            ctx.fillRect(0, canvas.height * 0.6, canvas.width, canvas.height * 0.4);
+
+            // 3. Gambar Elemen Pohon / Industri berdasarkan rasio
+            const totalTrees = Math.floor(vHutan / 5);
+            ctx.fillStyle = '#059669';
+            for(let i = 0; i < totalTrees; i++) {
+                let x = (i * 18) % canvas.width;
+                let y = canvas.height * 0.6 - 15;
+                ctx.beginPath();
+                ctx.arc(x, y, 10, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            // Pabrik / Industri jika industri > 30%
+            const industriVal = parseInt(document.getElementById('slider-industri').value);
+            if(industriVal > 30) {
+                ctx.fillStyle = '#334155';
+                ctx.fillRect(canvas.width - 60, canvas.height * 0.6 - 35, 45, 35);
+                // Asap Pabrik
+                ctx.fillStyle = 'rgba(148, 163, 184, 0.7)';
+                ctx.beginPath();
+                ctx.arc(canvas.width - 45, canvas.height * 0.6 - 45, 12, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function simulasikanLangkah() {
+            updateSimulasiManusia();
+            if(chartImpactInstance) {
+                const labels = chartImpactInstance.data.labels;
+                labels.push('T' + (labels.length));
+                if(labels.length > 8) labels.shift();
+
+                chartImpactInstance.data.datasets[0].data.push(vHutan);
+                if(chartImpactInstance.data.datasets[0].data.length > 8) chartImpactInstance.data.datasets[0].data.shift();
+
+                chartImpactInstance.data.datasets[1].data.push(vPolusi);
+                if(chartImpactInstance.data.datasets[1].data.length > 8) chartImpactInstance.data.datasets[1].data.shift();
+
+                chartImpactInstance.data.datasets[2].data.push(vSatwa);
+                if(chartImpactInstance.data.datasets[2].data.length > 8) chartImpactInstance.data.datasets[2].data.shift();
+
+                chartImpactInstance.update();
+            }
+        }
+
+        function resetSimulasiManusia() {
+            document.getElementById('slider-deforestasi').value = 30;
+            document.getElementById('slider-industri').value = 25;
+            document.getElementById('slider-pemukiman').value = 20;
+            document.getElementById('slider-reboisasi').value = 40;
+            updateSimulasiManusia();
+            showToast("Reset Berhasil", "Parameter simulasi dikembalikan ke kondisi seimbang awal.");
+        }
+
+        // --- SALIN JAWABAN LKPD ---
+        function salinJawabanLKPD() {
+            const nama = document.getElementById('lkpd-nama-input').value;
+            const kelas = document.getElementById('lkpd-kelas-input').value;
+            const j1 = document.getElementById('lkpd-ans-1').value;
+            const j2 = document.getElementById('lkpd-ans-2').value;
+            const j3 = document.getElementById('lkpd-ans-3').value;
+
+            if(!nama || !kelas) {
+                showToast("Data Belum Lengkap", "Mohon isi Nama Lengkap dan Kelas Anda terlebih dahulu!", false);
+                return;
+            }
+
+            const teksLKPD = `LKPD DIGITAL - MGMP IPA MTs KOTA MALANG\nMateri: Pengaruh Manusia terhadap Ekosistem\nNama: ${nama}\nKelas: ${kelas}\n\n1. Analisis Eutrofikasi:\n${j1}\n\n2. Rekomendasi Simulator:\n${j2}\n\n3. Inovasi Konservasi:\n${j3}`;
+            const dummy = document.createElement('textarea');
+            dummy.value = teksLKPD;
+            document.body.appendChild(dummy);
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+
+            showToast("Berhasil Disalin!", "Jawaban LKPD Anda berhasil disalin ke clipboard untuk diserahkan kepada guru pengampu.");
+        }
+
+        // --- 20 SOAL PILIHAN GANDA HOTS MENDALAM ---
+        const soalHOTSData = [
+            {
+                q: "1. Alih fungsi hutan lindung menjadi perkebunan kelapa sawit secara luas menurunkan keanekaragaman hayati secara drastis. Faktor utama penyebab kepunahan lokal satwa endemik pada kasus ini adalah...",
+                options: [
+                    "A. Meningkatnya intensitas cahaya matahari di dasar hutan",
+                    "B. Hilangnya relung ekologis (niche) dan fragmentasi habitat alami",
+                    "C. Penurunan kadar karbon dioksida di atmosfer secara mendadak",
+                    "D. Meningkatnya ketersediaan air tanah bagi hewan herbivora"
+                ],
+                answer: 1,
+                pembahasan: "Fragmentasi habitat menghancurkan struktur vegetasi multitingkat dan memutus relung ekologis alami yang dibutuhkan satwa endemik untuk berkembang biak."
+            },
+            {
+                q: "2. Suatu danau di Malang mengalami peledakan eceng gondok (algal bloom) akibat limpasan pupuk pertanian kaya fosfat. Mengapa fenomena eutrofikasi ini memicu kematian massal ikan di dasar danau?",
+                options: [
+                    "A. Eceng gondok menyerap seluruh gas racun dari udara",
+                    "B. Pembusukan eceng gondok oleh dekomposer menghabiskan oksigen terlarut (DO)",
+                    "C. Eceng gondok memakan langsung benih-benih ikan",
+                    "D. Air danau menjadi terlalu jernih sehingga suhu naik dramatis"
+                ],
+                answer: 1,
+                pembahasan: "Saat alga/eceng gondok mati, populasi bakteri dekomposer melonjak tajam dan mengonsumsi hampir seluruh oksigen terlarut (DO), menyebabkan anoksia fatal bagi ikan."
+            },
+            {
+                q: "3. Penggunaan racun pestisida jenis DDT pada ekosistem perairan menyebabkan burung elang pemakan ikan mengalami kerapuhan cangkang telur. Fenomena ini dijelaskan secara ilmiah melalui konsep...",
+                options: [
+                    "A. Eutrofikasi dan fitoremediasi",
+                    "B. Biomagnifikasi (pekatnya akumulasi polutan pada trofik puncak)",
+                    "C. Suksesi primer tanaman air",
+                    "D. Symbiosis komensalisme antara elang dan ikan"
+                ],
+                answer: 1,
+                pembahasan: "Biomagnifikasi menyebabkan racun yang tak terurai (seperti DDT) mengendap dengan konsentrasi bertambah lipat pada tingkat trofik tertinggi (elang)."
+            },
+            {
+                q: "4. Di daerah perkotaan padat industri, pembakaran bahan bakar fosil menghasilkan gas sulfur dioksida (SO₂) dan nitrogen oksida (NOₓ). Dampak ekologis langsung terhadap vegetasi adalah...",
+                options: [
+                    "A. Hujan asam yang merusak jaringan klorofil daun dan melarutkan nutrisi tanah",
+                    "B. Meningkatnya laju pembentukan buah pada pohon-pohon kota",
+                    "C. Penurunan kelembapan udara secara permanen",
+                    "D. Pembekuan air tanah pada musim panas"
+                ],
+                answer: 0,
+                pembahasan: "Gas SO₂ dan NOₓ bereaksi dengan uap air membentuk hujan asam (pH < 5,6) yang merusak sel stomata dan melarutkan kalsium/magnesium penting di tanah."
+            },
+            {
+                q: "5. Pembukaan lahan dengan metode tebas-bakar (slash and burn) melepaskan gas rumah kaca dalam jumlah raksasa. Dampak sistemik bagi iklim global adalah...",
+                options: [
+                    "A. Efek rumah kaca meningkat, memicu pemanasan global dan pergeseran iklim",
+                    "B. Terjadinya penurunan suhu bumi secara drastis",
+                    "C. Ketebalan lapisan ozon bertambah di atas khatulistiwa",
+                    "D. Meningkatnya pembekuan es di wilayah tropis"
+                ],
+                answer: 0,
+                pembahasan: "Pembakaran hutan melepaskan CO₂ dalam jumlah masif yang terperangkap di atmosfer, memperkuat efek rumah kaca dan pergeseran iklim."
+            },
+            {
+                q: "6. Introduksi spesies ikan predator asing (seperti ikan aligator) ke dalam waduk lokal sering kali menghancurkan populasi ikan asli. Penyebab utamanya adalah...",
+                options: [
+                    "A. Ikan asing tersebut bereproduksi secara aseksual",
+                    "B. Spesies asing tidak memiliki predator alami lokal dan memangsa ikan asli secara agresif",
+                    "C. Air waduk langsung berubah menjadi air asin",
+                    "D. Ikan asli mendadak berhenti bernapas"
+                ],
+                answer: 1,
+                pembahasan: "Spesies invasif asing tidak memiliki musuh alami lokal, sehingga populasinya tak terkendali dan mendominasi persaingan makanan."
+            },
+            {
+                q: "7. Penambangan pasir ilegal di bantaran sungai menyebabkan air menjadi sangat keruh. Dampak abiotik dan biotik yang saling berantai adalah...",
+                options: [
+                    "A. Penetrasil cahaya matahari terhalang -> Fotosintesis tumbuhan air terganggu -> Populasi herbivora air turun",
+                    "B. Air keruh -> Suhu air turun -> Ikan bertambah banyak",
+                    "C. Kadar oksigen naik -> Fotosintesis meningkat -> Sungai menjadi kering",
+                    "D. Tidak ada dampak bagi organisme perairan"
+                ],
+                answer: 0,
+                pembahasan: "Kekeruhan menghambat penetrasi sinar matahari, menekan fotosintesis autotrof, yang pada akhirnya menurunkan pasokan oksigen dan makanan bagi herbivora."
+            },
+            {
+                q: "8. Upaya fitoremediasi menggunakan tanaman enceng gondok atau bunga matahari pada tanah tercemar logam berat bertujuan untuk...",
+                options: [
+                    "A. Mengubah logam berat menjadi racun yang lebih berbahaya",
+                    "B. Menyerap dan mengumpulkan polutan logam berat dari tanah/air ke dalam jaringan tanaman",
+                    "C. Membunuh seluruh mikroorganisme pengurai di dalam tanah",
+                    "D. Mempercepat penguapan air tanah"
+                ],
+                answer: 1,
+                pembahasan: "Fitoremediasi adalah bioteknologi hijau yang memanfaatkan tumbuhan hipermukulator untuk menyerap dan menetralisir polutan di lingkungan."
+            },
+            {
+                q: "9. Pembangunan pemukiman di daerah resapan air pegunungan memicu krisis air bersih di kawasan hilir kota saat musim kemarau. Hal ini terjadi karena...",
+                options: [
+                    "A. Pemukiman menyerap air tanah terlalu dingin",
+                    "B. Betonisasi menutup infiltrasi air hujan ke dalam akuifer tanah",
+                    "C. Pohon-pohon pegunungan membuang terlalu banyak air",
+                    "D. Air hujan menguap sebelum menyentuh tanah"
+                ],
+                answer: 1,
+                pembahasan: "Alih fungsi lahan menjadi lantai semen/beton menghentikan proses infiltrasi air hujan, sehingga air langsung menjadi limpasan permukaan (run-off) dan akuifer memusnah."
+            },
+            {
+                q: "10. Mikroplastik yang terbuang ke laut terakumulasi di dalam tubuh plankton dan ikan kecil. Ancaman terbesar bagi manusia yang mengonsumsi ikan tersebut adalah...",
+                options: [
+                    "A. Manusia mendapatkan energi dua kali lipat",
+                    "B. Pengendapan senyawa kimia beracun (senyawa karsinogenik) di organ tubuh manusia",
+                    "C. Kulit manusia berubah menjadi transparan",
+                    "D. Manusia menjadi kebal terhadap semua penyakit"
+                ],
+                answer: 1,
+                pembahasan: "Mikroplastik mengikat zat pencemar beracun (POPs) yang berpindah ke tubuh manusia melalui rantai makanan, berpotensi memicu gangguan hormonal dan karsinogenisitas."
+            },
+            {
+                q: "11. Salah satu bentuk konservasi in-situ untuk melindungi flora dan fauna langka dari ancaman perburuan liar adalah...",
+                options: [
+                    "A. Memelihara harimau di dalam kandang rumah pribadi",
+                    "B. Penetapan kawasan Taman Nasional dan Suaka Margasatwa",
+                    "C. Pembuatan kebun binatang di tengah pusat belanja",
+                    "D. Memindahkan seluruh populasi hewan ke benua lain"
+                ],
+                answer: 1,
+                pembahasan: "Konservasi in-situ dilakukan di dalam habitat aslinya (seperti Taman Nasional) untuk menjaga keutuhan interaksi ekosistem secara alami."
+            },
+            {
+                q: "12. Penggunaan deterjen rumah tangga berbahan fosfat tinggi yang dibuang langsung ke selokan tanpa pengolahan IPAL akan menyebabkan...",
+                options: [
+                    "A. Air selokan menjadi steril dan aman diminum",
+                    "B. Pencemaran perairan sungai dan gangguan insang pada ikan",
+                    "C. Tanah di sekitar selokan menjadi sangat subur tanpa batas",
+                    "D. Meningkatnya jumlah ikan gurami secara alami"
+                ],
+                answer: 1,
+                pembahasan: "Bahan surfaktan deterjen merusak lapisan lendir insang ikan, sedangkan kandungan fosfat memicu eutrofikasi di perairan penerima."
+            },
+            {
+                q: "13. Prinsip Pembangunan Berkelanjutan (Sustainable Development) dalam pemanfaatan sumber daya alam mengisyaratkan bahwa manusia harus...",
+                options: [
+                    "A. Mengambil seluruh hasil alam secepatnya sebelum habis",
+                    "B. Memenuhi kebutuhan generasi saat ini tanpa mengorbankan kemampuan generasi mendatang",
+                    "C. Melarang penggunaan teknologi industri sama sekali",
+                    "D. Membakar sisa sampah plastik di area terbuka"
+                ],
+                answer: 1,
+                pembahasan: "Pembangunan berkelanjutan memadukan pertumbuhan ekonomi, keadilan sosial, dan perlindungan lingkungan untuk jangka panjang."
+            },
+            {
+                q: "14. Kota Malang mengalami kenaikan suhu rata-rata tahunan (fenomena Urban Heat Island). Penyebab utamanya adalah...",
+                options: [
+                    "A. Menurunnya jumlah kendaraan bermotor",
+                    "B. Berkurangnya Ruang Terbuka Hijau (RTH) dan tingginya emisi kendaraan serta pemantulan beton",
+                    "C. Meningkatnya volume es di pegunungan",
+                    "D. Banyaknya pepohonan yang dipasang di atap rumah"
+                ],
+                answer: 1,
+                pembahasan: "Urban Heat Island terjadi akibat hilangnya vegetasi peneduh (RTH) digantikan permukaan aspal/beton yang menyerap panas serta emisi tinggi dari transportasi."
+            },
+            {
+                q: "15. Pembuangan limbah oli bekas langsung ke tanah dapat mematikan cacing tanah dan mikroorganisme pengurai. Efek dominonya bagi tanah adalah...",
+                options: [
+                    "A. Tanah menjadi sangat gembur dan kaya nitrogen",
+                    "B. Aerasi tanah terhenti, pembentukan humus terganggu, dan tanah menjadi tandus",
+                    "C. Tanah berubah warna menjadi emas",
+                    "D. Tanaman berbuah dua kali lebih cepat"
+                ],
+                answer: 1,
+                pembahasan: "Lapisan minyak oli menutup pori-pori udara tanah, membunuh dekomposer (cacing/bakteri), sehingga siklus daur ulang hara terhenti total."
+            },
+            {
+                q: "16. Mengapa kegiatan reboisasi menggunakan tanaman lokal (indigenous species) lebih disarankan daripada tanaman asing?",
+                options: [
+                    "A. Tanaman asing harganya jauh lebih murah",
+                    "B. Tanaman lokal lebih sesuai dengan rantai makanan dan kondisi abiotik ekosistem setempat",
+                    "C. Tanaman lokal tidak membutuhkan air sama sekali",
+                    "D. Tanaman asing pasti merusak iklim"
+                ],
+                answer: 1,
+                pembahasan: "Spesies lokal mendukung keanekaragaman fauna asli yang telah beradaptasi dalam ko-evolusi rantai makanan ekosistem setempat."
+            },
+            {
+                q: "17. Penerapan sistem pertanian Organik tanpa pestisida sintetis memberikan dampak positif terhadap ekosistem berupa...",
+                options: [
+                    "A. Menjaga kelestarian predator alami dan keanekaragaman mikroba tanah",
+                    "B. Memusnahkan seluruh serangga di muka bumi",
+                    "C. Menyebabkan tanah menjadi keras seperti batu",
+                    "D. Menghentikan proses fotosintesis"
+                ],
+                answer: 0,
+                pembahasan: "Pertanian organik menghindari bahaya akumulasi racun kimia, sehingga serangga penyerbuk dan mikroba penyubur tanah tetap lestari."
+            },
+            {
+                q: "18. Suatu pabrik kertas membuang limbah cair bersuhu tinggi (pencemaran termal) ke dalam sungai. Dampak langsung bagi organisme sungai adalah...",
+                options: [
+                    "A. Kelarutan oksigen dalam air menurun drastis sehingga ikan mengalami stres pernapasan",
+                    "B. Ikan berkembang biak menjadi lebih raksasa",
+                    "C. Air sungai membeku seketika",
+                    "D. Kecepatan arus sungai melambat"
+                ],
+                answer: 0,
+                pembahasan: "Peningkatan suhu air (thermal pollution) secara fisik menurunkan tingkat kelarutan gas oksigen (DO), yang dapat merusak respirasi biota perairan."
+            },
+            {
+                q: "19. Pemanfaatan energi terbarukan (seperti Panel Surya dan Pembangkit Listrik Tenaga Angin) bertujuan meminimalkan dampak eksploitasi alam berupa...",
+                options: [
+                    "A. Penurunan emisi gas rumah kaca dari pembakaran batu bara",
+                    "B. Peningkatan polusi sampah plastik di lautan",
+                    "C. Pembentukan hujan asam di kawasan hutan gurun",
+                    "D. Penurunan jumlah oksigen di udara"
+                ],
+                answer: 0,
+                pembahasan: "Energi terbarukan tidak memicu emisi karbon masif dari bahan bakar fosil (seperti batu bara), sehingga mengurangi tekanan pemanasan global."
+            },
+            {
+                q: "20. Rencana Tata Ruang Wilayah (RTRW) menetapkan 30% luas Kota Malang wajib menjadi Ruang Terbuka Hijau (RTH). Fungsi ekologis RTH tersebut adalah...",
+                options: [
+                    "A. Sebagai lokasi perumahan eksklusif",
+                    "B. Sebagai paru-paru kota, penyerap polutan CO₂, dan daerah resapan air",
+                    "C. Tempat pembuangan sampah akhir (TPA)",
+                    "D. Tempat pendirian pabrik semen baru"
+                ],
+                answer: 1,
+                pembahasan: "RTH berfungsi secara ekologis untuk menyaring polusi udara, menghasilkan oksigen murni, menahan air hujan, dan mempertahankan keanekaragaman hayati perkotaan."
+            }
+        ];
+
+        function renderSoalHOTS() {
+            const container = document.getElementById('container-soal-hots');
+            let html = '';
+            soalHOTSData.forEach((s, idx) => {
+                html += `
+                    <div class="p-6 rounded-3xl border border-slate-200 bg-slate-50/60 space-y-4 hover:shadow-md transition">
+                        <h4 class="font-bold text-slate-900 text-xs sm:text-base leading-relaxed">${s.q}</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                `;
+                s.options.forEach((opt, oIdx) => {
+                    html += `
+                        <label class="flex items-start space-x-3 p-3.5 rounded-2xl border border-slate-200 bg-white hover:bg-emerald-50/60 cursor-pointer transition text-xs sm:text-sm">
+                            <input type="radio" name="soal_hots_${idx}" value="${oIdx}" class="mt-0.5 accent-emerald-600">
+                            <span class="text-slate-700 font-medium">${opt}</span>
+                        </label>
+                    `;
+                });
+                html += `
+                        </div>
+                        <div id="pembahasan_hots_${idx}" class="hidden mt-3 p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-950">
+                            <span class="font-bold block mb-1 text-emerald-800"><i class="fa-solid fa-lightbulb mr-1"></i> Pembahasan Ilmiah HOTS:</span>
+                            ${s.pembahasan}
+                        </div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        let skorHOTSGlobal = 0;
+        function evaluasiQuizHOTS() {
+            skorHOTSGlobal = 0;
+            soalHOTSData.forEach((s, idx) => {
+                const selected = document.querySelector(`input[name="soal_hots_${idx}"]:checked`);
+                const pemb = document.getElementById(`pembahasan_hots_${idx}`);
+                pemb.classList.remove('hidden');
+
+                if(selected) {
+                    const val = parseInt(selected.value);
+                    if(val === s.answer) {
+                        skorHOTSGlobal += 5;
+                        selected.parentElement.classList.add('bg-emerald-100', 'border-emerald-500');
+                    } else {
+                        selected.parentElement.classList.add('bg-rose-100', 'border-rose-500');
+                    }
+                }
+            });
+
+            document.getElementById('nilai-skor-hots').innerText = skorHOTSGlobal;
+            document.getElementById('badge-skor-hots').classList.remove('hidden');
+            document.getElementById('btn-cetak-sertifikat').classList.remove('hidden');
+            showToast("Evaluasi HOTS Selesai", `Skor akhir Anda adalah ${skorHOTSGlobal} dari 100. Tombol cetak sertifikat kelulusan kini telah aktif!`);
+        }
+
+        function tampilkanSertifikat() {
+            const namaSiswa = document.getElementById('lkpd-nama-input').value || "Peserta Didik Hebat";
+            document.getElementById('nama-sertifikat-display').innerText = namaSiswa;
+            document.getElementById('skor-sertifikat-display').innerText = skorHOTSGlobal;
+            document.getElementById('modal-sertifikat').classList.remove('hidden');
+        }
+
+        function tutupSertifikat() {
+            document.getElementById('modal-sertifikat').classList.add('hidden');
+        }
+
+        // Window Load Event
+        window.onload = function() {
+            initSimulasiManusia();
+            renderSoalHOTS();
+        }
+    </script>
+</body>
+</html>
